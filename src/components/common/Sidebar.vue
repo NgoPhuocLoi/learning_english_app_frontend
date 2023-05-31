@@ -13,7 +13,7 @@ watch(props, () => {
 
 <template>
   <div
-    :class="`fixed z-10 h-full w-full bg-[rgba(0,0,0,.4)] duration-200 ${
+    :class="`fixed top-0 z-20 h-full w-full bg-[rgba(0,0,0,.4)] duration-200 ${
       isShow ? '' : 'pointer-events-none bg-transparent'
     }`"
     @click="emit('update:show', false)"
@@ -38,7 +38,8 @@ watch(props, () => {
       <div class="mx-[22px] my-[11px] flex flex-col">
         <RouterLink
           to="/"
-          active-class="text-blue-600 bg-blue-100"
+          @click="emit('update:show', false)"
+          exact-active-class="text-blue-600 bg-blue-100"
           class="w-full py-[10px] mb-[4px] pl-[12px] rounded-md hover:bg-blue-100 text-[15px] font-semibold flex items-center"
           ><ion-icon
             name="home-outline"
@@ -48,6 +49,7 @@ watch(props, () => {
         >
         <RouterLink
           to="/ho-so"
+          @click="emit('update:show', false)"
           active-class="text-blue-600 bg-blue-100"
           class="w-full py-[10px] mb-[4px] pl-[12px] rounded-md hover:bg-blue-100 text-[15px] font-semibold flex items-center"
           ><ion-icon

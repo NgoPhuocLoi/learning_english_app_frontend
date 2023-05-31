@@ -1,0 +1,87 @@
+<script setup>
+import TopicProgress from "../components/common/TopicProgress.vue";
+import TopicItem from "../components/home/TopicItem.vue";
+import topics from "../data/topics.json";
+
+const props = defineProps(["openModal"]);
+const emit = defineEmits("update:openModal");
+</script>
+
+<template>
+  <div class="flex gap-7 justify-between h-[300px]">
+    <div class="grow">
+      <h2 class="my-4 font-bold text-[28px]">Chủ đề</h2>
+
+      <div>
+        <div class="flex items-center my-6 true">
+          <h3 class="font-semibold text-2xl text-gray-500 mr-2">Sơ cấp</h3>
+        </div>
+
+        <div>
+          <TopicItem
+            v-for="topic in topics"
+            :key="topic.id"
+            :title="topic.translatedTitle"
+            :desc="topic.description"
+            :thumb-url="topic.thumbnailUrl"
+            @click="emit('update:openModal', true)"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="w-[354px] hidden lg:block">
+      <div class="py-4 px-5 border-2 border-gray-200 rounded-xl mt-4">
+        <div class="mb-2 flex items-center justify-between">
+          <span class="text-[18px] font-semibold">Gần đây</span
+          ><span
+            class="text-sm text-gray-500 hover:text-gray-700 duration-75 cursor-pointer"
+            >Xem tất cả</span
+          >
+        </div>
+
+        <div class="flex gap-2">
+          <TopicProgress
+            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
+            total="50"
+            current="14"
+          />
+
+          <TopicProgress
+            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
+            total="50"
+            current="25"
+          />
+
+          <TopicProgress
+            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
+            total="50"
+            current="14"
+          />
+
+          <TopicProgress
+            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
+            total="50"
+            current="25"
+          />
+        </div>
+      </div>
+
+      <div class="py-4 px-5 border-2 border-gray-200 rounded-xl mt-4">
+        <div class="mb-2 flex items-center justify-between">
+          <span class="text-[18px] font-semibold">Tiến độ học</span>
+        </div>
+
+        <div class="my-2 flex justify-between">
+          <div class="text-gray-500">Chủ đề đã hoàn thành</div>
+          <div class="text-blue-500 font-semibold">0/30</div>
+        </div>
+        <div class="my-2 flex justify-between">
+          <div class="text-gray-500">Bài kiểm tra đã hoàn thành</div>
+          <div class="text-red-500 font-semibold">0/3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped></style>

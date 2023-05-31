@@ -7,7 +7,7 @@ const show = ref(false);
 
 <template>
   <div
-    class="fixed top-0 w-full lg:h-[80px] md:h-[75px] h-[70px] lg:px-[128px] lg:py-[8px] md:px-[60px] md:py-[7.5px] px-[21px] py-[10.5px] flex justify-between shadow-md"
+    class="fixed bg-white z-10 top-0 w-full lg:h-[80px] md:h-[75px] h-[70px] lg:px-[128px] lg:py-[8px] md:px-[60px] md:py-[7.5px] px-[21px] py-[10.5px] flex justify-between shadow-md"
   >
     <div class="w-[180px] md:w-[190px] lg:w-[200px] h-full bg-yellow-300">
       Logo
@@ -16,7 +16,7 @@ const show = ref(false);
     <div class="hidden lg:flex items-center justify-center">
       <RouterLink
         to="/"
-        active-class="text-blue-600 bg-blue-100"
+        exact-active-class="text-blue-600 bg-blue-100"
         class="p-2 mx-2 rounded-md hover:bg-blue-100 font-semibold text-gray-700 flex items-center"
       >
         <ion-icon
@@ -28,6 +28,7 @@ const show = ref(false);
 
       <RouterLink
         to="/ho-so"
+        active-class="text-blue-600 bg-blue-100"
         class="p-2 mx-2 rounded-md hover:bg-blue-100 font-semibold text-gray-700 flex items-center"
       >
         <ion-icon
