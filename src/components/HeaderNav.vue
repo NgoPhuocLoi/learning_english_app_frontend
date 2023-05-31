@@ -1,0 +1,53 @@
+<script setup>
+import { ref } from "vue";
+import Sidebar from "./common/Sidebar.vue";
+
+const show = ref(false);
+</script>
+
+<template>
+  <div
+    class="fixed top-0 w-full lg:h-[80px] md:h-[75px] h-[70px] lg:px-[128px] lg:py-[8px] md:px-[60px] md:py-[7.5px] px-[21px] py-[10.5px] flex justify-between shadow-md"
+  >
+    <div class="w-[180px] md:w-[190px] lg:w-[200px] h-full bg-yellow-300">
+      Logo
+    </div>
+
+    <div class="hidden lg:flex items-center justify-center">
+      <RouterLink
+        to="/"
+        active-class="text-blue-600 bg-blue-100"
+        class="p-2 mx-2 rounded-md hover:bg-blue-100 font-semibold text-gray-700 flex items-center"
+      >
+        <ion-icon
+          name="home-outline"
+          class="text-[20px] mr-[2px] mb-[1px]"
+        ></ion-icon>
+        Trang chủ
+      </RouterLink>
+
+      <RouterLink
+        to="/ho-so"
+        class="p-2 mx-2 rounded-md hover:bg-blue-100 font-semibold text-gray-700 flex items-center"
+      >
+        <ion-icon
+          name="person-outline"
+          class="text-[20px] mr-[2px] mb-[1px]"
+        ></ion-icon>
+        Hồ sơ</RouterLink
+      >
+    </div>
+
+    <div class="flex items-center lg:hidden">
+      <ion-icon
+        name="menu"
+        @click="show = true"
+        class="text-[40px] cursor-pointer text-gray-600 hover:text-black"
+      ></ion-icon>
+    </div>
+  </div>
+
+  <Sidebar v-model:show="show" />
+</template>
+
+<style scoped></style>
