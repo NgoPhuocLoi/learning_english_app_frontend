@@ -1,53 +1,127 @@
 <script setup>
+import { onMounted, ref, shallowRef } from "vue";
+import { useRoute } from "vue-router";
+import PopupNotification from "../components/common/PopupNotification.vue";
 import { QuestionType1, QuestionType2 } from "../components/learning";
-import congratulateImg from "../static/giphy.gif";
-import { ref, shallowRef, watch } from "vue";
-import questions from "../data/animal_questions.json";
+import { QuestionService, TopicService } from "../services";
+import icons from "../static/icons";
+import { useQuestionStore, useTopicStore } from "../store";
+
+const topicStore = useTopicStore();
+const questionStore = useQuestionStore();
+const route = useRoute();
+const topicService = new TopicService();
+const questionService = new QuestionService();
+
+onMounted(async () => {
+  if (!topicStore.chosenTopic) {
+    console.log("Fetch");
+    const res = await topicService.getAllTopics();
+    const currentTopic = res.data.metadata.topics.find(
+      (tp) => tp.slug === route.params.topic
+    );
+    topicStore.setChosenTopic(currentTopic);
+  }
+
+  const res = await questionService.getAllQuestions(topicStore.chosenTopic.id);
+
+  questionStore.setQuestions(res.data.metadata.questions);
+
+  console.log(res.data.metadata.questions);
+});
 
 const type = ref(1);
-const currentQues = ref(1);
-const Question = shallowRef(QuestionType1);
+const currentQues = ref(0);
+const Question = shallowRef({
+  1: QuestionType1,
+  2: QuestionType2,
+  3: QuestionType2,
+});
+const show = ref(false);
+
+const onClickNextQuestion = () => {
+  show.value = false;
+  setTimeout(() => {
+    currentQues.value++;
+  }, 300);
+};
 </script>
 
 <template>
-  <div class="lg:px-[320px] pt-[24px]">
+  <div
+    class="lg:px-[320px] pt-[24px] md:px-[90px] px-7 h-[100vh] flex flex-col"
+  >
     <div class="flex items-center justify-between">
       <h3 class="text-xl font-bold bg-gray-100 px-4 py-2 rounded-full shadow">
-        Chào hỏi
+        {{ topicStore.chosenTopic?.translatedTitle }}
       </h3>
-      <div class="text-xl mr-16 lg:mr-0 font-semibold text-gray-500">10/35</div>
+      <div class="text-xl mr-16 lg:mr-0 font-semibold text-gray-500">
+        {{ currentQues + 1 }}/{{ questionStore.questions.length }}
+      </div>
     </div>
-    <component :is="Question" :question="questions[currentQues]" />
-    <div class="z-20 px-0 lg:px-8 relative z-30">
+    <component
+      v-if="currentQues < topicStore.chosenTopic?.totalQuestions"
+      :is="Question[questionStore.questions[currentQues]?.type]"
+      v-model:show="show"
+      :question="questionStore.questions[currentQues]"
+    />
+
+    <div v-else>
+      <div class="flex items-center justify-center flex-col py-[100px]">
+        <div class="w-[120px]">
+          <img :src="topicStore.chosenTopic?.thumbnailUrl" alt="" />
+        </div>
+
+        <div class="font-medium text-2xl mt-8 text-center">
+          Chúc mừng! Bạn đã hoàn thành chủ đề này!
+        </div>
+      </div>
+    </div>
+    <div class="px-0 lg:px-8 z-30 mb-4">
       <button
-        @click="currentQues++"
-        class="text-center text-xl rounded-full cursor-pointer font-semibold py-2 w-full duration-300 ease-out bg-gray-200 text-gray-500"
+        v-if="currentQues < topicStore.chosenTopic?.totalQuestions"
+        @click="onClickNextQuestion"
+        :class="`text-center text-xl rounded-full cursor-pointer font-semibold py-2 w-full duration-300 ease-out bg-gray-200 ${
+          show ? 'text-blue-500' : 'text-gray-400 pointer-events-none'
+        }`"
       >
         Tiếp theo
       </button>
+
+      <RouterLink
+        v-else
+        to="/"
+        class="block text-center text-xl rounded-full cursor-pointer font-medium py-2 w-full duration-300 ease-out bg-blue-500 text-white hover:opacity-90"
+      >
+        Kết thúc
+      </RouterLink>
     </div>
   </div>
 
-  <div class="fixed z-20 bg-white/60 w-full h-full top-0">
-    <div
-      class="absolute inset-x-0 bottom-60 lg:bottom-[230px] z-10 duration-300 ease-out scale-100 w-[180px] left-[50%] translate-x-[-50%]"
-    >
-      <img :src="congratulateImg" alt="" />
-    </div>
-    <div
-      class="absolute bottom-0 bg-gradient-to-t rounded-t-[50px] pt-6 duration-300 ease-out inset-x-0 lg:inset-x-52 xl:inset-x-80 2xl:inset-x-[420px] h-56 lg:h-[216px] translate-y-0 from-blue-500 to-blue-500/90"
-    >
-      <div class="w-full flex mb-2 justify-center items-center">
-        <ion-icon
-          name="play-circle"
-          class="text-[40px] text-white mr-2"
-        ></ion-icon>
-        <div class="text-white text-2xl font-medium">Cat</div>
-      </div>
+  <PopupNotification
+    :show="show"
+    :question="questionStore.questions[currentQues]"
+  />
 
-      <div class="text-center text-white text-xl font-light px-4">Con mèo</div>
+  <div class="fixed top-5 right-6 flex gap-3">
+    <div class="p-2 md:p-[10px] cursor-pointer rounded-full bg-gray-200">
+      <img :src="icons.menu" alt="" class="md:w-[26px] w-[22px]" />
     </div>
+    <RouterLink
+      to="/"
+      class="p-[10px] cursor-pointer rounded-full bg-gray-200 hidden lg:block"
+    >
+      <img :src="icons.filledHome" alt="" class="w-[26px]" />
+    </RouterLink>
   </div>
 </template>
 
-<style scoped></style>
+<style>
+.question-header {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+</style>

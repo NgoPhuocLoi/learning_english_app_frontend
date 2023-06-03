@@ -21,10 +21,20 @@ export default {
             transform: "scale(0)",
           },
         },
+
+        up: {
+          "0%": {
+            transform: "translateY(100%)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "show-animation": "show .1s ease-out forwards",
         "hide-animation": "hide 0.04s ease-in forwards",
+        "up-animation": "up 0.1s ease-out forwards",
       },
     },
   },

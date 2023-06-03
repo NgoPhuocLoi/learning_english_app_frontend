@@ -1,529 +1,353 @@
 [
   {
-    "id": "05d680bf-51d2-4f33-9668-098f56afa25a",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
+    "id": "1393c802-2f9c-4607-b402-fb22be8a405c",
+    "topicId": "ade62b2c-106c-46eb-8d37-b1e5eb218152",
+    "type": 2,
     "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "cú mèo",
-    "grammaTips": null,
+    "content": "a dog",
+    "meaning": "một con chó",
+    "index": 8,
+    "grammarTips": "Mạo từ \"a\" (có nghĩa là: một) đứng trước danh từ đếm được số ít khi danh từ này được bắt đầu bằng phụ âm.",
     "answers": [
       {
-        "id": "24eca69f-b230-41ad-be69-6f1dc63dcad2",
-        "questionId": "05d680bf-51d2-4f33-9668-098f56afa25a",
+        "id": "0e5a6d07-ea07-4d95-9fd4-c0ba7aaaa09c",
+        "questionId": "1393c802-2f9c-4607-b402-fb22be8a405c",
         "correct": false,
-        "content": "chicken",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fchicken.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/chicken.mp3"
+        "content": "the",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "2bfcaf34-940d-4085-9ffd-700f7457b3d0",
-        "questionId": "05d680bf-51d2-4f33-9668-098f56afa25a",
+        "id": "78c4c977-0f65-417e-90a9-bcf1d548ded1",
+        "questionId": "1393c802-2f9c-4607-b402-fb22be8a405c",
         "correct": false,
-        "content": "cat",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fcat.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/cat.mp3"
+        "content": "an",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "5f8f0d42-febe-40f9-a610-881db6847231",
-        "questionId": "05d680bf-51d2-4f33-9668-098f56afa25a",
+        "id": "c0b7571c-6e82-47e9-a886-ed35f21b26b0",
+        "questionId": "1393c802-2f9c-4607-b402-fb22be8a405c",
         "correct": true,
-        "content": "owl",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fowl.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/owl.mp3"
+        "content": "a",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "a8d15d1a-981e-44b1-8f23-a431d3350f32",
-        "questionId": "05d680bf-51d2-4f33-9668-098f56afa25a",
+        "id": "efa47305-ef66-4f8f-82e4-aa4939d45f81",
+        "questionId": "1393c802-2f9c-4607-b402-fb22be8a405c",
         "correct": false,
-        "content": "duck",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fduck.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/duck.mp3"
+        "content": "this",
+        "thumbnailUrl": null,
+        "audioUrl": null
       }
     ]
   },
   {
-    "id": "0d370230-1f56-4076-9604-ed4b7b854a05",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
+    "id": "4d98895e-4261-41ac-b3c4-764929b5d337",
+    "topicId": "ade62b2c-106c-46eb-8d37-b1e5eb218152",
+    "type": 2,
     "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con kiến",
-    "grammaTips": null,
+    "content": "There is an owl on the tree.",
+    "meaning": "Có một con cú mèo ở trên cây.",
+    "index": 10,
+    "grammarTips": "Mạo từ \"an\" (có nghĩa là: một) đứng trước danh từ đếm được số ít khi danh từ này bắt đầu bằng nguyên âm (u,e,o,a,i).",
     "answers": [
       {
-        "id": "00c2b130-27e7-4d5d-9b98-0d27ac944d0c",
-        "questionId": "0d370230-1f56-4076-9604-ed4b7b854a05",
+        "id": "4d6080c9-932d-4701-a956-d7e8155118fe",
+        "questionId": "4d98895e-4261-41ac-b3c4-764929b5d337",
         "correct": true,
-        "content": "ant",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fant.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/ant.mp3"
+        "content": "an",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "2231048e-b107-4acc-b16d-749f4e0cfc86",
-        "questionId": "0d370230-1f56-4076-9604-ed4b7b854a05",
+        "id": "52a797e6-6115-4818-baf6-7913d0dbde05",
+        "questionId": "4d98895e-4261-41ac-b3c4-764929b5d337",
         "correct": false,
-        "content": "octopus",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Foctopus.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/octopus.mp3"
+        "content": "this",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "5b503792-d6d1-4f86-9f07-dbd094da70a3",
-        "questionId": "0d370230-1f56-4076-9604-ed4b7b854a05",
+        "id": "7514305f-aee7-4452-b5bd-1d00d18738a3",
+        "questionId": "4d98895e-4261-41ac-b3c4-764929b5d337",
         "correct": false,
-        "content": "spider",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fspider.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/spider.mp3"
+        "content": "the",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "97e12b96-4536-4958-9a26-df2acb9a5cd5",
-        "questionId": "0d370230-1f56-4076-9604-ed4b7b854a05",
+        "id": "c107ada8-94d9-415c-8d81-7643d6757e30",
+        "questionId": "4d98895e-4261-41ac-b3c4-764929b5d337",
         "correct": false,
-        "content": "buffalo",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fbuffalo.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/buffalo.mp3"
+        "content": "a",
+        "thumbnailUrl": null,
+        "audioUrl": null
       }
     ]
   },
   {
-    "id": "0fb1451f-6743-4160-9985-8d765495400e",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
+    "id": "c36cb41e-2c6c-4311-b663-d902f3d32dab",
+    "topicId": "ade62b2c-106c-46eb-8d37-b1e5eb218152",
+    "type": 2,
     "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con lợn",
-    "grammaTips": null,
+    "content": "He has an owl.",
+    "meaning": "Anh ấy có một con cú mèo.",
+    "index": 22,
+    "grammarTips": "Trong thì Hiện tại đơn, động từ \"have\" chia thành \"has\" khi dùng với các Đại từ nhân xưng She/He/It.",
     "answers": [
       {
-        "id": "1f4bb340-5d15-438e-8534-30418ec4f167",
-        "questionId": "0fb1451f-6743-4160-9985-8d765495400e",
+        "id": "2b6e2569-3727-4cae-9565-c05d2962bb90",
+        "questionId": "c36cb41e-2c6c-4311-b663-d902f3d32dab",
         "correct": false,
-        "content": "dog",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fdog.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/dog.mp3"
+        "content": "haves",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "7cb11cb5-9610-46fd-89cd-4b6484657a43",
-        "questionId": "0fb1451f-6743-4160-9985-8d765495400e",
+        "id": "30782354-3d54-47a9-bc14-5ad81d6bc831",
+        "questionId": "c36cb41e-2c6c-4311-b663-d902f3d32dab",
         "correct": false,
-        "content": "owl",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fowl.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/owl.mp3"
+        "content": "have",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "8f4912d9-5267-4ddb-a47e-d0de014bc55c",
-        "questionId": "0fb1451f-6743-4160-9985-8d765495400e",
-        "correct": false,
-        "content": "chicken",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fchicken.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/chicken.mp3"
-      },
-      {
-        "id": "b5a6020a-9bdb-49ca-8308-877f47a6a52b",
-        "questionId": "0fb1451f-6743-4160-9985-8d765495400e",
+        "id": "759b5f1e-5520-4249-888a-816f62f8eefa",
+        "questionId": "c36cb41e-2c6c-4311-b663-d902f3d32dab",
         "correct": true,
-        "content": "pig",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fpig.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/pig.mp3"
+        "content": "has",
+        "thumbnailUrl": null,
+        "audioUrl": null
+      },
+      {
+        "id": "f7d1eff6-27d7-4084-b601-1c38f93dca21",
+        "questionId": "c36cb41e-2c6c-4311-b663-d902f3d32dab",
+        "correct": false,
+        "content": "having",
+        "thumbnailUrl": null,
+        "audioUrl": null
       }
     ]
   },
   {
-    "id": "42cda8e0-db3b-46c7-bd5d-5da79ae66bce",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
+    "id": "0909cf46-9dbf-48a9-9de3-5f4c99b149f7",
+    "topicId": "ade62b2c-106c-46eb-8d37-b1e5eb218152",
+    "type": 2,
     "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "bạch tuộc",
-    "grammaTips": null,
+    "content": "I have a cat and a dog.",
+    "meaning": "Tôi có một con mèo và một con chó.",
+    "index": 25,
+    "grammarTips": "Trong thì Hiện tại đơn, động từ \"have\" giữ nguyên khi dùng với các Đại từ nhân xưng I/We/You/They.",
     "answers": [
       {
-        "id": "66a9dbfc-6721-407d-b66b-5e870f437b9f",
-        "questionId": "42cda8e0-db3b-46c7-bd5d-5da79ae66bce",
+        "id": "0f384b6d-880c-4595-86db-5e0a072dd196",
+        "questionId": "0909cf46-9dbf-48a9-9de3-5f4c99b149f7",
         "correct": false,
-        "content": "eagle",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Feagle.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/eagle.mp3"
+        "content": "haves",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "696d5d3a-3c12-47aa-88d9-4319589bb02d",
-        "questionId": "42cda8e0-db3b-46c7-bd5d-5da79ae66bce",
+        "id": "3d37c807-8fae-46de-9200-26c508626be6",
+        "questionId": "0909cf46-9dbf-48a9-9de3-5f4c99b149f7",
         "correct": false,
-        "content": "fish",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ffish.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/fish.mp3"
+        "content": "having",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "a44af903-84b5-4b4f-8065-0d9efcb06859",
-        "questionId": "42cda8e0-db3b-46c7-bd5d-5da79ae66bce",
+        "id": "7d60ce86-53ba-4c34-a5e1-fbdd46c3b0c0",
+        "questionId": "0909cf46-9dbf-48a9-9de3-5f4c99b149f7",
         "correct": false,
-        "content": "snake",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fsnake.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/snake.mp3"
+        "content": "has",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "b207b0e4-eb7f-44dd-ba52-12b9d29ed8f5",
-        "questionId": "42cda8e0-db3b-46c7-bd5d-5da79ae66bce",
+        "id": "b1f9d50f-f077-47b0-a966-bd410bc733e1",
+        "questionId": "0909cf46-9dbf-48a9-9de3-5f4c99b149f7",
         "correct": true,
-        "content": "octopus",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Foctopus.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/octopus.mp3"
+        "content": "have",
+        "thumbnailUrl": null,
+        "audioUrl": null
       }
     ]
   },
   {
-    "id": "42ff58df-d818-42a2-9988-da3447b0e59a",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
+    "id": "82a45b34-706a-457a-9954-3e460f457c99",
+    "topicId": "ade62b2c-106c-46eb-8d37-b1e5eb218152",
+    "type": 2,
     "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con chó",
-    "grammaTips": null,
+    "content": "It's an ant.",
+    "meaning": "Nó là một con kiến.",
+    "index": 33,
+    "grammarTips": null,
     "answers": [
       {
-        "id": "2c37f28c-9afe-4287-81cb-d18412c29627",
-        "questionId": "42ff58df-d818-42a2-9988-da3447b0e59a",
+        "id": "06848848-4708-460a-8f7a-ee99cf9b5808",
+        "questionId": "82a45b34-706a-457a-9954-3e460f457c99",
         "correct": false,
-        "content": "pig",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fpig.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/pig.mp3"
+        "content": "that",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "798d4d8f-2984-4028-8bae-747c0af12679",
-        "questionId": "42ff58df-d818-42a2-9988-da3447b0e59a",
+        "id": "1b92112c-55fb-406a-86ea-2135406ed1ac",
+        "questionId": "82a45b34-706a-457a-9954-3e460f457c99",
         "correct": false,
-        "content": "cat",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fcat.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/cat.mp3"
+        "content": "a",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "e8fefc8c-d1bb-4234-adec-6d7d1af0e8e4",
-        "questionId": "42ff58df-d818-42a2-9988-da3447b0e59a",
+        "id": "7921f386-7f4a-43b5-8e4c-2abf7564320f",
+        "questionId": "82a45b34-706a-457a-9954-3e460f457c99",
         "correct": true,
-        "content": "dog",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fdog.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/dog.mp3"
+        "content": "an",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "eabc1f3b-7dbb-49ef-9575-03f4faed8b72",
-        "questionId": "42ff58df-d818-42a2-9988-da3447b0e59a",
+        "id": "e552e58c-7857-4fd1-8565-b64c0e3a6189",
+        "questionId": "82a45b34-706a-457a-9954-3e460f457c99",
         "correct": false,
-        "content": "owl",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fowl.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/owl.mp3"
+        "content": "this",
+        "thumbnailUrl": null,
+        "audioUrl": null
       }
     ]
   },
   {
-    "id": "49ed7bea-f04b-4aaf-9ed3-6a629fab74d8",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
+    "id": "61d07e09-2c7e-40cc-9d6f-e793adafd57e",
+    "topicId": "ade62b2c-106c-46eb-8d37-b1e5eb218152",
+    "type": 2,
     "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con mèo",
-    "grammaTips": null,
+    "content": "She has a dog and a duck.",
+    "meaning": "Cô ấy có một con chó và một con vịt.",
+    "index": 35,
+    "grammarTips": null,
     "answers": [
       {
-        "id": "38bd16ff-17e2-4206-9852-352bcb523948",
-        "questionId": "49ed7bea-f04b-4aaf-9ed3-6a629fab74d8",
-        "correct": false,
-        "content": "dog",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fdog.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/dog.mp3"
-      },
-      {
-        "id": "918eb04e-491a-4f2e-882f-12d25dabf804",
-        "questionId": "49ed7bea-f04b-4aaf-9ed3-6a629fab74d8",
-        "correct": false,
-        "content": "owl",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fowl.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/owl.mp3"
-      },
-      {
-        "id": "b12da610-bb67-4b5f-a2af-3c62cffdf51c",
-        "questionId": "49ed7bea-f04b-4aaf-9ed3-6a629fab74d8",
-        "correct": false,
-        "content": "chicken",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fchicken.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/chicken.mp3"
-      },
-      {
-        "id": "b50c78e9-7882-42fb-ac59-e315de4f2b32",
-        "questionId": "49ed7bea-f04b-4aaf-9ed3-6a629fab74d8",
+        "id": "041d6849-6930-45d9-b107-0eb7cbb0e890",
+        "questionId": "61d07e09-2c7e-40cc-9d6f-e793adafd57e",
         "correct": true,
-        "content": "cat",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fcat.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/cat.mp3"
+        "content": "has",
+        "thumbnailUrl": null,
+        "audioUrl": null
+      },
+      {
+        "id": "0b5af952-6044-442e-a41c-7a91e0f11099",
+        "questionId": "61d07e09-2c7e-40cc-9d6f-e793adafd57e",
+        "correct": false,
+        "content": "haves",
+        "thumbnailUrl": null,
+        "audioUrl": null
+      },
+      {
+        "id": "b660453b-2f56-42be-8416-0a85817fd59b",
+        "questionId": "61d07e09-2c7e-40cc-9d6f-e793adafd57e",
+        "correct": false,
+        "content": "have",
+        "thumbnailUrl": null,
+        "audioUrl": null
+      },
+      {
+        "id": "db0fd033-b9b0-42ad-a5e6-cebb4509a272",
+        "questionId": "61d07e09-2c7e-40cc-9d6f-e793adafd57e",
+        "correct": false,
+        "content": "having",
+        "thumbnailUrl": null,
+        "audioUrl": null
       }
     ]
   },
   {
-    "id": "8121590d-35d6-42ea-91df-0df1b97a8656",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
+    "id": "5fa2da8d-2929-4580-bc9b-eec4db209a08",
+    "topicId": "ade62b2c-106c-46eb-8d37-b1e5eb218152",
+    "type": 2,
     "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con trâu",
-    "grammaTips": null,
+    "content": "There is an ostrich in the zoo.",
+    "meaning": "Có một con đà điểu trong sở thú.",
+    "index": 37,
+    "grammarTips": null,
     "answers": [
       {
-        "id": "342969c1-5e8e-4dde-9af9-ec32fa699b2c",
-        "questionId": "8121590d-35d6-42ea-91df-0df1b97a8656",
-        "correct": false,
-        "content": "ant",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fant.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/ant.mp3"
-      },
-      {
-        "id": "9d0ea7e3-a85d-4e85-a8b1-b80f4cc8fa15",
-        "questionId": "8121590d-35d6-42ea-91df-0df1b97a8656",
+        "id": "1ca669fb-6634-42ff-825d-045431d0ce7e",
+        "questionId": "5fa2da8d-2929-4580-bc9b-eec4db209a08",
         "correct": true,
-        "content": "buffalo",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fbuffalo.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/buffalo.mp3"
+        "content": "an",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "ac253dff-885a-43a4-bcef-8a44eeaf3797",
-        "questionId": "8121590d-35d6-42ea-91df-0df1b97a8656",
+        "id": "7f68bb1b-507e-4145-8c54-e3011293a878",
+        "questionId": "5fa2da8d-2929-4580-bc9b-eec4db209a08",
         "correct": false,
-        "content": "fish",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ffish.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/fish.mp3"
+        "content": "that",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "c03c9a63-7aed-480c-a977-4d7391829d5b",
-        "questionId": "8121590d-35d6-42ea-91df-0df1b97a8656",
+        "id": "9361848c-12e2-4680-af6b-ba1fe739fc52",
+        "questionId": "5fa2da8d-2929-4580-bc9b-eec4db209a08",
         "correct": false,
-        "content": "snake",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fsnake.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/snake.mp3"
+        "content": "this",
+        "thumbnailUrl": null,
+        "audioUrl": null
+      },
+      {
+        "id": "d7bf913e-c447-4ea5-8e35-b599998e3563",
+        "questionId": "5fa2da8d-2929-4580-bc9b-eec4db209a08",
+        "correct": false,
+        "content": "a",
+        "thumbnailUrl": null,
+        "audioUrl": null
       }
     ]
   },
   {
-    "id": "977131f6-ae52-47fc-989e-e5caea5c3030",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
+    "id": "9b6ea5a3-467f-4733-a560-c2d175253f50",
+    "topicId": "ade62b2c-106c-46eb-8d37-b1e5eb218152",
+    "type": 2,
     "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con rắn",
-    "grammaTips": null,
+    "content": "She has a parrot.",
+    "meaning": "Cô ấy có một con vẹt.",
+    "index": 39,
+    "grammarTips": null,
     "answers": [
       {
-        "id": "013ce7e3-6bba-4767-a177-7c1d2ba6e963",
-        "questionId": "977131f6-ae52-47fc-989e-e5caea5c3030",
+        "id": "825d78f3-0d4f-4218-b033-e345a9c99406",
+        "questionId": "9b6ea5a3-467f-4733-a560-c2d175253f50",
         "correct": false,
-        "content": "buffalo",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fbuffalo.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/buffalo.mp3"
+        "content": "having",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "9281ed21-b3fa-4aa2-8241-8920831cec77",
-        "questionId": "977131f6-ae52-47fc-989e-e5caea5c3030",
+        "id": "94feccfe-8874-46ec-96b7-d5ecd9e6e6fa",
+        "questionId": "9b6ea5a3-467f-4733-a560-c2d175253f50",
         "correct": false,
-        "content": "eagle",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Feagle.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/eagle.mp3"
+        "content": "haves",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "937e468b-5266-4026-a066-20b88e2779c6",
-        "questionId": "977131f6-ae52-47fc-989e-e5caea5c3030",
+        "id": "a4fe2c56-8852-49eb-93ca-aa484291289d",
+        "questionId": "9b6ea5a3-467f-4733-a560-c2d175253f50",
         "correct": false,
-        "content": "octopus",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Foctopus.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/octopus.mp3"
+        "content": "have",
+        "thumbnailUrl": null,
+        "audioUrl": null
       },
       {
-        "id": "95eb3661-9320-40c4-9b87-c840fa44ae29",
-        "questionId": "977131f6-ae52-47fc-989e-e5caea5c3030",
+        "id": "a8656b80-ec42-42e7-b897-3475178d1a52",
+        "questionId": "9b6ea5a3-467f-4733-a560-c2d175253f50",
         "correct": true,
-        "content": "snake",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fsnake.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/snake.mp3"
-      }
-    ]
-  },
-  {
-    "id": "c0ecbf43-0d4a-4bdd-9c1c-23c8e92d6495",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
-    "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con sư tử",
-    "grammaTips": null,
-    "answers": [
-      {
-        "id": "422ad68c-f5f2-45e0-ad1e-21cc10aefb84",
-        "questionId": "c0ecbf43-0d4a-4bdd-9c1c-23c8e92d6495",
-        "correct": false,
-        "content": "fox",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ffox.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/fox.mp3"
-      },
-      {
-        "id": "52c2acf8-c7e8-4ad2-af42-d94a8f1dfa6a",
-        "questionId": "c0ecbf43-0d4a-4bdd-9c1c-23c8e92d6495",
-        "correct": false,
-        "content": "elephant",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Felephant.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/elephant.mp3"
-      },
-      {
-        "id": "933b8e40-261d-4b6d-ad40-509f33f934bf",
-        "questionId": "c0ecbf43-0d4a-4bdd-9c1c-23c8e92d6495",
-        "correct": true,
-        "content": "lion",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Flion.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/lion.mp3"
-      },
-      {
-        "id": "c6515b5c-bd5c-40b0-800f-380406c49a04",
-        "questionId": "c0ecbf43-0d4a-4bdd-9c1c-23c8e92d6495",
-        "correct": false,
-        "content": "tiger",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ftiger.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/tiger.mp3"
-      }
-    ]
-  },
-  {
-    "id": "e1ae88c4-c63d-4f38-a095-9671d5899edd",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
-    "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con cáo",
-    "grammaTips": null,
-    "answers": [
-      {
-        "id": "314c855e-14c0-4999-bbc3-d0018d40a310",
-        "questionId": "e1ae88c4-c63d-4f38-a095-9671d5899edd",
-        "correct": false,
-        "content": "tiger",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ftiger.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/tiger.mp3"
-      },
-      {
-        "id": "bf1f6626-5817-405d-bb93-dffba7bda9b6",
-        "questionId": "e1ae88c4-c63d-4f38-a095-9671d5899edd",
-        "correct": false,
-        "content": "cow",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fcow.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/cow.mp3"
-      },
-      {
-        "id": "d9479957-9e97-4105-97bf-7e1bcba65958",
-        "questionId": "e1ae88c4-c63d-4f38-a095-9671d5899edd",
-        "correct": true,
-        "content": "fox",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ffox.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/fox.mp3"
-      },
-      {
-        "id": "f071c40e-53cf-4f1c-b455-a6aad0349baa",
-        "questionId": "e1ae88c4-c63d-4f38-a095-9671d5899edd",
-        "correct": false,
-        "content": "goat",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fgoat.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/goat.mp3"
-      }
-    ]
-  },
-  {
-    "id": "f229568d-fed7-4331-87da-50dbc196374e",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
-    "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con voi",
-    "grammaTips": null,
-    "answers": [
-      {
-        "id": "3ce0448f-4304-41c0-8046-ad068b5ba908",
-        "questionId": "f229568d-fed7-4331-87da-50dbc196374e",
-        "correct": false,
-        "content": "goat",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fgoat.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/goat.mp3"
-      },
-      {
-        "id": "5de41331-f2c4-4ed1-ae18-79861a93848f",
-        "questionId": "f229568d-fed7-4331-87da-50dbc196374e",
-        "correct": false,
-        "content": "fox",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ffox.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/fox.mp3"
-      },
-      {
-        "id": "bf1d3087-8d79-4ded-bd77-b83d3162c002",
-        "questionId": "f229568d-fed7-4331-87da-50dbc196374e",
-        "correct": false,
-        "content": "tiger",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ftiger.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/tiger.mp3"
-      },
-      {
-        "id": "ebe38c3c-a3d6-48fb-8f10-b76a906c67cb",
-        "questionId": "f229568d-fed7-4331-87da-50dbc196374e",
-        "correct": true,
-        "content": "elephant",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Felephant.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/elephant.mp3"
-      }
-    ]
-  },
-  {
-    "id": "f3debb73-aa3c-4544-8fd1-047fdb6984db",
-    "topicId": "5389990a-1e3d-410d-aee9-c1a002a471a2",
-    "type": 1,
-    "level": 1,
-    "content": "Chọn",
-    "hasPartList": false,
-    "meaning": "con hổ",
-    "grammaTips": null,
-    "answers": [
-      {
-        "id": "0263968f-869e-4b27-968c-a67638ccf89a",
-        "questionId": "f3debb73-aa3c-4544-8fd1-047fdb6984db",
-        "correct": false,
-        "content": "sheep",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Fsheep.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/sheep.mp3"
-      },
-      {
-        "id": "7eb928de-d827-403f-9f88-f0640e1e2b17",
-        "questionId": "f3debb73-aa3c-4544-8fd1-047fdb6984db",
-        "correct": false,
-        "content": "fish",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ffish.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/fish.mp3"
-      },
-      {
-        "id": "e8253fbf-dc09-4f2e-a4de-32dd5efcffd9",
-        "questionId": "f3debb73-aa3c-4544-8fd1-047fdb6984db",
-        "correct": false,
-        "content": "lion",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Flion.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/lion.mp3"
-      },
-      {
-        "id": "ee24a071-5829-4cbd-b50f-69c5ea30cf78",
-        "questionId": "f3debb73-aa3c-4544-8fd1-047fdb6984db",
-        "correct": true,
-        "content": "tiger",
-        "thumbnailUrl": "https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fanimal%2Fimage%2Ftiger.png&w=1200&q=75",
-        "audioUrl": "https://dinoenglish.app/assets/media/animal/audio/tiger.mp3"
+        "content": "has",
+        "thumbnailUrl": null,
+        "audioUrl": null
       }
     ]
   }

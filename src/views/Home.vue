@@ -2,9 +2,17 @@
 import TopicProgress from "../components/common/TopicProgress.vue";
 import TopicItem from "../components/home/TopicItem.vue";
 import topics from "../data/topics.json";
+import icons from "../static/icons";
+import { useTopicStore } from "../store";
 
 const props = defineProps(["openModal"]);
 const emit = defineEmits("update:openModal");
+const topicStore = useTopicStore();
+
+const onOpenModel = (topic) => {
+  topicStore.setChosenTopic(topic);
+  emit("update:openModal", true);
+};
 </script>
 
 <template>
@@ -19,13 +27,92 @@ const emit = defineEmits("update:openModal");
 
         <div>
           <TopicItem
-            v-for="topic in topics"
+            v-for="topic in topicStore.topics.filter(
+              (topic) => topic.level === 1 && topic.index !== null
+            )"
             :key="topic.id"
             :title="topic.translatedTitle"
             :desc="topic.description"
             :thumb-url="topic.thumbnailUrl"
-            @click="emit('update:openModal', true)"
+            @click="onOpenModel(topic)"
           />
+
+          <div
+            class="w-full mb-6 h-28 py-3 px-5 hover:scale-[101%] duration-100 ease-out bg-gradient-to-r from-blue-500 to-red-200 shadow-sm hover:shadow-md mt-6 rounded-lg flex justify-between items-center gap-2 cursor-pointer"
+          >
+            <div class="h-full flex items-center">
+              <div class="bg-white p-2 rounded-full h-full aspect-square w-min">
+                <div class="h-full w-full relative shrink-0 grow-0">
+                  <img :src="icons.level1" alt="" />
+                </div>
+              </div>
+              <div class="text-white text-xl ml-4 grow">Kiểm tra Sơ cấp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center my-6 true">
+          <h3 class="font-semibold text-2xl text-gray-500 mr-2">Trung cấp</h3>
+        </div>
+
+        <div>
+          <TopicItem
+            v-for="topic in topicStore.topics.filter(
+              (topic) => topic.level === 2 && topic.index !== null
+            )"
+            :key="topic.id"
+            :title="topic.translatedTitle"
+            :desc="topic.description"
+            :thumb-url="topic.thumbnailUrl"
+            @click="onOpenModel(topic)"
+          />
+
+          <div
+            class="w-full mb-6 h-28 py-3 px-5 hover:scale-[101%] duration-100 ease-out bg-gradient-to-r from-blue-500 to-red-200 shadow-sm hover:shadow-md mt-6 rounded-lg flex justify-between items-center gap-2 cursor-pointer"
+          >
+            <div class="h-full flex items-center">
+              <div class="bg-white p-2 rounded-full h-full aspect-square w-min">
+                <div class="h-full w-full relative shrink-0 grow-0">
+                  <img :src="icons.level2" alt="" />
+                </div>
+              </div>
+              <div class="text-white text-xl ml-4 grow">Kiểm tra Trung cấp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center my-6 true">
+          <h3 class="font-semibold text-2xl text-gray-500 mr-2">Cao cấp</h3>
+        </div>
+
+        <div>
+          <TopicItem
+            v-for="topic in topicStore.topics.filter(
+              (topic) => topic.level === 3 && topic.index !== null
+            )"
+            :key="topic.id"
+            :title="topic.translatedTitle"
+            :desc="topic.description"
+            :thumb-url="topic.thumbnailUrl"
+            @click="onOpenModel(topic)"
+          />
+
+          <div
+            class="w-full mb-6 h-28 py-3 px-5 hover:scale-[101%] duration-100 ease-out bg-gradient-to-r from-blue-500 to-red-200 shadow-sm hover:shadow-md mt-6 rounded-lg flex justify-between items-center gap-2 cursor-pointer"
+          >
+            <div class="h-full flex items-center">
+              <div class="bg-white p-2 rounded-full h-full aspect-square w-min">
+                <div class="h-full w-full relative shrink-0 grow-0">
+                  <img :src="icons.level3" alt="" />
+                </div>
+              </div>
+              <div class="text-white text-xl ml-4 grow">Kiểm tra Cao cấp</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

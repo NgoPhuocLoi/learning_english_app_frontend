@@ -1,6 +1,9 @@
 <script setup>
+import { useTopicStore } from "../../store";
+
 const props = defineProps(["open"]);
 const emit = defineEmits(["update:open"]);
+const topicStore = useTopicStore();
 </script>
 
 <template>
@@ -18,22 +21,27 @@ const emit = defineEmits(["update:open"]);
     >
       <div class="mb-6 mx-auto w-24">
         <img
-          src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Ftopic%2Fimage%2Fgreeting.png&w=1920&q=75"
+          :src="topicStore.chosenTopic?.thumbnailUrl"
           alt=""
           class="w-full"
         />
       </div>
 
-      <div class="text-2xl font-semibold text-center mb-2">Chào hỏi</div>
+      <div class="text-2xl font-semibold text-center mb-2">
+        {{ topicStore.chosenTopic?.translatedTitle }}
+      </div>
 
-      <div class="text-lg text-center text-gray-500 mb-4">am/is/are</div>
+      <div class="text-lg text-center text-gray-500 mb-4">
+        {{ topicStore.chosenTopic?.description }}
+      </div>
 
       <div class="flex w-full gap-4">
-        <div
+        <RouterLink
+          :to="`/${topicStore.chosenTopic?.slug}/hoc`"
           class="w-full mt-4 flex-center rounded-full bg-gradient-to-b from-blue-500 to-blue-300 hover:opacity-90 duration-100 text-white text-center text-lg uppercase py-3 cursor-pointer"
         >
           <span>Học</span>
-        </div>
+        </RouterLink>
 
         <div
           class="w-full mt-4 flex-center rounded-full bg-gradient-to-b from-red-500 to-red-300 hover:opacity-90 duration-100 text-white text-center text-lg uppercase py-3 cursor-pointer"
