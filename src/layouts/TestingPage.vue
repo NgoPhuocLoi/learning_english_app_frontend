@@ -12,15 +12,16 @@ const questionStore = useQuestionStore();
 const route = useRoute();
 const topicService = new TopicService();
 const questionService = new QuestionService();
+const chosenAns = ref(null);
 
 const ansStatusStyle = {
   border: {
-    true: "border-green-500",
-    false: "border-red-500",
+    true: "border-blue-500",
+    false: "border-blue-500",
   },
   bg: {
-    true: "bg-green-500",
-    false: "bg-red-500",
+    true: "bg-blue-500",
+    false: "bg-blue-500",
   },
 };
 
@@ -54,10 +55,21 @@ const showInfo = ref({
 });
 
 const onClickNextQuestion = () => {
-  showInfo.value = { show: false, correct: true };
+  showInfo.value = {
+    show: false,
+    correct: true,
+  };
+  chosenAns.value = null;
   setTimeout(() => {
     currentQues.value++;
   }, 300);
+};
+
+const handleCheckAns = () => {
+  showInfo.value = {
+    show: true,
+    correct: chosenAns.value.isCorrect,
+  };
 };
 </script>
 
@@ -66,9 +78,12 @@ const onClickNextQuestion = () => {
     class="lg:px-[320px] pt-[24px] md:px-[90px] px-7 h-[100vh] flex flex-col"
   >
     <div class="flex items-center justify-between">
-      <h3 class="text-xl font-bold bg-gray-100 px-4 py-2 rounded-full shadow">
+      <h3
+        class="text-xl font-bold bg-gray-100 px-4 py-2 rounded-full shadow hidden md:block"
+      >
         {{ topicStore.chosenTopic?.translatedTitle }}
       </h3>
+      <div class="text-3xl font-semibold text-red-500">15:00</div>
       <div class="text-xl mr-16 lg:mr-0 font-semibold text-gray-500">
         {{
           currentQues + 1 > questionStore.questions.length
@@ -82,7 +97,9 @@ const onClickNextQuestion = () => {
       :is="Question[questionStore.questions[currentQues]?.type]"
       v-model:showInfo="showInfo"
       :question="questionStore.questions[currentQues]"
+      :testing="true"
       :ansStatusStyle="ansStatusStyle"
+      v-model:chosenAns="chosenAns"
     />
 
     <div v-else>
@@ -97,15 +114,29 @@ const onClickNextQuestion = () => {
       </div>
     </div>
     <div class="px-0 lg:px-8 z-30 mb-4">
-      <button
-        v-if="currentQues < questionStore.questions?.length"
-        @click="onClickNextQuestion"
-        :class="`text-center text-xl rounded-full cursor-pointer font-semibold py-2 w-full duration-300 ease-out bg-gray-200 ${
-          showInfo.show ? 'text-blue-500' : 'text-gray-400 pointer-events-none'
-        }`"
-      >
-        Tiếp theo
-      </button>
+      <div v-if="currentQues < questionStore.questions?.length">
+        <button
+          v-if="!showInfo.show"
+          @click="handleCheckAns"
+          :class="`text-center text-xl rounded-full cursor-pointer font-semibold py-2 w-full duration-300 ease-out ${
+            chosenAns
+              ? 'text-white bg-blue-500'
+              : 'text-gray-400 pointer-events-none bg-gray-200 '
+          }`"
+        >
+          Kiểm tra
+        </button>
+
+        <button
+          v-else
+          @click="onClickNextQuestion"
+          :class="`text-center text-xl rounded-full cursor-pointer font-semibold py-2 w-full duration-300 ease-out bg-gray-200 ${
+            chosenAns.isCorrect ? 'text-green-500' : 'text-red-500'
+          }`"
+        >
+          Tiếp theo
+        </button>
+      </div>
 
       <RouterLink
         v-else
@@ -120,6 +151,7 @@ const onClickNextQuestion = () => {
   <PopupNotification
     :showInfo="showInfo"
     :question="questionStore.questions[currentQues]"
+    :testing="true"
   />
 
   <div class="fixed top-5 right-6 flex gap-3">

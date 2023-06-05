@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps(["src", "total", "current"]);
+const props = defineProps(["src", "done"]);
 </script>
 
 <template>
@@ -10,7 +10,7 @@ const props = defineProps(["src", "total", "current"]);
       class="CircularProgressbar w-full"
       viewBox="0 0 100 100"
       data-test-id="CircularProgressbar"
-      v-if="+current > 0"
+      v-if="props.done"
     >
       <path
         class="CircularProgressbar-trail"
@@ -41,10 +41,10 @@ const props = defineProps(["src", "total", "current"]);
         fill-opacity="0"
         stroke-linecap="round"
         :style="`
-          stroke: blue;
+          stroke: green;
           transition-duration: 1.5s;
           stroke-dasharray: 300px, 300px;
-          stroke-dashoffset: ${300 * (1 - current / total)}px;
+          stroke-dashoffset: 0;
         `"
       ></path>
     </svg>
@@ -52,7 +52,7 @@ const props = defineProps(["src", "total", "current"]);
     <img
       :src="props.src"
       :class="`${
-        +current > 0 ? 'w-[80%] h-[80%]' : 'w-[100%] h-[100%]'
+        done ? 'w-[80%] h-[80%]' : 'w-[100%] h-[100%]'
       }bg-red-500 absolute rounded-full`"
     />
   </div>

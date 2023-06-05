@@ -1,7 +1,7 @@
 <script setup>
 import TopicProgress from "../common/TopicProgress.vue";
 
-const props = defineProps(["title", "desc", "thumbUrl"]);
+const props = defineProps(["title", "desc", "thumbUrl", "done"]);
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const props = defineProps(["title", "desc", "thumbUrl"]);
       <p class="text-[17px] mt-[2px] text-gray-500">{{ props.desc }}</p>
     </div>
 
-    <TopicProgress :src="props.thumbUrl" total="50" current="14" />
+    <TopicProgress :src="props.thumbUrl" :done="props.done" />
   </div>
 </template>
 

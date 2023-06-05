@@ -3,16 +3,18 @@ import TopicProgress from "../components/common/TopicProgress.vue";
 import TopicItem from "../components/home/TopicItem.vue";
 import topics from "../data/topics.json";
 import icons from "../static/icons";
-import { useTopicStore } from "../store";
+import { useTopicStore, useUserStore } from "../store";
 
 const props = defineProps(["openModal"]);
 const emit = defineEmits("update:openModal");
 const topicStore = useTopicStore();
+const userStore = useUserStore();
 
 const onOpenModel = (topic) => {
   topicStore.setChosenTopic(topic);
   emit("update:openModal", true);
 };
+console.log(userStore.user);
 </script>
 
 <template>
@@ -35,6 +37,7 @@ const onOpenModel = (topic) => {
             :desc="topic.description"
             :thumb-url="topic.thumbnailUrl"
             @click="onOpenModel(topic)"
+            :done="userStore.user?.topicsDone.includes(topic.id)"
           />
 
           <div
@@ -116,7 +119,7 @@ const onOpenModel = (topic) => {
         </div>
       </div>
     </div>
-    <div class="w-[354px] hidden lg:block">
+    <div v-if="userStore.user" class="w-[354px] hidden lg:block">
       <div class="py-4 px-5 border-2 border-gray-200 rounded-xl mt-4">
         <div class="mb-2 flex items-center justify-between">
           <span class="text-[18px] font-semibold">Gần đây</span

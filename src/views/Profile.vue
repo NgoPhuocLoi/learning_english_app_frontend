@@ -1,21 +1,48 @@
 <script setup>
 import TopicProgress from "../components/common/TopicProgress.vue";
+import { useUserStore } from "../store";
+import defaultAvatar from "../static/default_avatar.png";
+
+const userStore = useUserStore();
+
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  userStore.setUser(null);
+};
 </script>
 
 <template>
+  <div v-if="!userStore.user" class="mt-10">
+    <img
+      class="h-24 w-24 rounded-full block mx-auto"
+      :src="defaultAvatar"
+      alt=""
+    />
+
+    <div class="text-center my-3">
+      <RouterLink to="/xac-thuc/dang-nhap" class="text-blue-500 font-semibold"
+        >Đăng nhập</RouterLink
+      >
+      để lưu tiến độ học tập
+    </div>
+  </div>
+
   <div
+    v-else
     class="flex flex-col lg:flex-row lg:justify-between lg:gap-20 mt-4 lg:mt-10 items-start"
   >
     <div
       class="w-full lg:basis-1/4 shrink-0 mb-6 lg:mb-0 flex-center flex-col pt-8 flex items-center justify-center"
     >
-      <img
-        class="h-24 w-24 rounded-full block"
-        src="https://dinoenglish.app/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FAAcHTtcCv6l2Vr_P4INtU6HseJ8BaiHNCKDgMEv60UkHtQ%3Ds96-c&w=1920&q=75"
-        alt=""
-      />
+      <div
+        class="w-[100px] h-[100px] bg-gray-500 leading-none flex-shrink-0 rounded-full flex justify-center items-center text-5xl text-white"
+      >
+        {{ userStore.user.name.split(" ").at(-1)[0].toUpperCase() }}
+      </div>
 
-      <div class="font-semibold text-xl text-center my-3">Lợi Ngô Phước</div>
+      <div class="font-semibold text-xl text-center my-3">
+        {{ userStore.user.name }}
+      </div>
     </div>
 
     <div class="overflow-hidden w-full lg:w-auto flex flex-col lg:grow">
@@ -78,11 +105,12 @@ import TopicProgress from "../components/common/TopicProgress.vue";
         <div class="flex justify-between items-center my-4">
           <h4 class="text-[18px] font-medium">Email</h4>
           <div class="text-gray-500 font-semibold text-lg">
-            phuocloi11223@gmail.com
+            {{ userStore.user.email }}
           </div>
         </div>
         <div class="h-[1px] bg-gray-200"></div>
         <button
+          @click="handleLogout"
           class="text-[18px] font-medium my-4 bg-red-500 text-white px-3 py-2 rounded-md hover:opacity-80"
         >
           Đăng xuất

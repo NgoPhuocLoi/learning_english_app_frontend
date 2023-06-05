@@ -1,8 +1,9 @@
 <script setup>
-import congratulateImg from "../../static/giphy.gif";
+import correctGif from "../../static/giphy.gif";
+import incorrectGif from "../../static/incorrect.gif";
 import icons from "../../static/icons";
 import { ref, watch } from "vue";
-const props = defineProps(["show", "question"]);
+const props = defineProps(["showInfo", "question", "testing"]);
 
 const isAudioPlaying = ref(false);
 const audio = ref();
@@ -26,20 +27,26 @@ const onPlayAudio = () => {
 <template>
   <div
     :class="`fixed z-20  ${
-      props.show ? 'bg-white/60' : 'bg-transparent pointer-events-none'
+      props.showInfo.show ? 'bg-white/60' : 'bg-transparent pointer-events-none'
     } w-full h-full top-0`"
   >
     <div
       :class="`absolute inset-x-0 bottom-60 lg:bottom-[230px] z-10 duration-300 ease-out ${
-        props.show ? 'scale-100' : 'scale-0'
+        props.showInfo.show ? 'scale-100' : 'scale-0'
       } w-[180px] left-[50%] translate-x-[-50%]`"
     >
-      <img :src="congratulateImg" alt="" />
+      <img :src="props.showInfo.correct ? correctGif : incorrectGif" alt="" />
     </div>
     <div
       :class="`absolute  ${
-        props.show ? 'translate-y-0' : 'translate-y-[100%]'
-      } bottom-0 bg-gradient-to-t rounded-t-[50px] pt-6 duration-300 ease-out inset-x-0 lg:inset-x-52 xl:inset-x-80 2xl:inset-x-[420px] h-56 lg:h-[216px] from-blue-500 to-blue-500/90`"
+        props.showInfo.show ? 'translate-y-0' : 'translate-y-[100%]'
+      } bottom-0 bg-gradient-to-t rounded-t-[50px] pt-6 duration-300 ease-out inset-x-0 lg:inset-x-52 xl:inset-x-80 2xl:inset-x-[420px] h-56 lg:h-[216px] ${
+        props.testing
+          ? showInfo.correct
+            ? 'bg-green-500'
+            : 'bg-red-500'
+          : 'from-blue-500 to-blue-500/90'
+      } `"
     >
       <div class="w-full flex mb-2 justify-center items-center">
         <div v-if="props.question?.type === 1">

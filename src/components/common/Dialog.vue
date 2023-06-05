@@ -43,11 +43,12 @@ const topicStore = useTopicStore();
           <span>Học</span>
         </RouterLink>
 
-        <div
+        <RouterLink
+          :to="`/${topicStore.chosenTopic?.slug}/kiem-tra`"
           class="w-full mt-4 flex-center rounded-full bg-gradient-to-b from-red-500 to-red-300 hover:opacity-90 duration-100 text-white text-center text-lg uppercase py-3 cursor-pointer"
         >
           <span>Kiểm tra</span>
-        </div>
+        </RouterLink>
       </div>
     </div>
   </div>

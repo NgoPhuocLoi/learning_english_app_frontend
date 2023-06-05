@@ -1,39 +1,40 @@
 <script setup>
 import { ref, watch } from "vue";
-const props = defineProps(["question", "show"]);
-const emit = defineEmits(["update:show"]);
+const props = defineProps([
+  "question",
+  "showInfo",
+  "ansStatusStyle",
+  "testing",
+]);
+const emit = defineEmits(["update:showInfo", "update:chosenAns"]);
 
-const ansStatusStyle = {
-  border: {
-    true: "border-green-500",
-    false: "border-red-500",
-  },
-  bg: {
-    true: "bg-green-500",
-    false: "bg-red-500",
-  },
-};
+const ansStatusStyle = ref(props.ansStatusStyle);
 
-const correctClass = "";
 const ansChosen = ref([]);
 const audios = ref();
 const correctAudio = ref();
 const quesBody = ref();
 
 const handleChooseAns = (id, isCorrect) => {
-  if (!ansChosen.value.includes(id)) ansChosen.value.push(id);
   audios.value.find((a) => a.id === id).play();
-  if (isCorrect) {
-    setTimeout(() => {
-      emit("update:show", true);
-      correctAudio.value.play();
-    }, 600);
+  if (props.testing) {
+    ansChosen.value.pop();
+    ansChosen.value.push(id);
+    emit("update:chosenAns", { id, isCorrect });
   } else {
+    if (!ansChosen.value.includes(id)) ansChosen.value.push(id);
+
+    if (isCorrect) {
+      setTimeout(() => {
+        emit("update:showInfo", { show: true, correct: true });
+        correctAudio.value.play();
+      }, 600);
+    }
   }
 };
 
 watch(props, () => {
-  if (!props.show) {
+  if (!props.showInfo.show) {
     quesBody.value.style.opacity = "0";
     setTimeout(() => {
       if (quesBody.value) quesBody.value.style.opacity = "1";
@@ -62,6 +63,7 @@ watch(props, () => {
             class="border-2 rounded-md flex flex-col cursor-pointer shadow hover:shadow-lg duration-100"
           >
             <div
+              v-if="!props.testing"
               class="flex items-center justify-center h-full max-h-[calc(100%_-_48px)]"
             >
               <img
@@ -71,6 +73,7 @@ watch(props, () => {
               />
             </div>
             <div
+              v-if="!props.testing"
               :class="
                 ansChosen.includes(answer.id)
                   ? 'text-white ' + ansStatusStyle.bg[answer.correct]
@@ -79,6 +82,12 @@ watch(props, () => {
               class="h-12 flex items-center justify-center flex-center bottom-0 inset-x-0 border-0 border-t-2 w-full rounded-lg rounded-t-none text-center font-medium text-xl duration-100 border-gray-200"
             >
               <span>{{ answer.content }}</span>
+            </div>
+            <div
+              v-if="props.testing"
+              class="text-2xl font-medium h-full flex items-center justify-center"
+            >
+              {{ answer?.content }}
             </div>
             <audio
               ref="audios"
