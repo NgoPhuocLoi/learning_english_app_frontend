@@ -4,6 +4,7 @@ import { useRouter } from "vue-router";
 import Spinner from "../../components/common/Spinner.vue";
 import { AuthService } from "../../services";
 import { useUserStore } from "../../store";
+import icons from "../../static/icons";
 
 const authService = new AuthService();
 const userStore = useUserStore();
@@ -40,6 +41,10 @@ const handleLogin = async () => {
     loading.value = false;
   }
 };
+
+const handleLoginWithGoogle = async () => {
+  window.close();
+};
 </script>
 
 <template>
@@ -50,6 +55,12 @@ const handleLogin = async () => {
       >
         Đăng nhập
       </h1>
+      <a
+        @click="handleLoginWithGoogle"
+        href="http://localhost:5000/v1/api/access/google"
+        target="_blank"
+        >Google</a
+      >
       <form class="space-y-4 md:space-y-6" @submit.prevent="handleLogin">
         <div>
           <label
@@ -100,6 +111,19 @@ const handleLogin = async () => {
           >
         </p>
       </form>
+
+      <div class="text-center">
+        <hr />
+        <span class="text-sm text-gray-400 block pt-2"
+          >Hoặc đăng nhập bằng</span
+        >
+        <a
+          href="http://localhost:5000/v1/api/access/google"
+          class="block w-[50px] h-[50px] mt-2 mb-[-20px] cursor-pointer mx-auto rounded-full p-2 hover:bg-gray-200"
+        >
+          <img :src="icons.google" alt="" />
+        </a>
+      </div>
     </div>
   </div>
 </template>

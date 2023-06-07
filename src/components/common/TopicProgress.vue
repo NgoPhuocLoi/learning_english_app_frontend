@@ -1,9 +1,11 @@
 <script setup>
-const props = defineProps(["src", "done"]);
+const props = defineProps(["src", "done", "onClickHandler", "disabled"]);
 </script>
 
 <template>
   <div
+    @click="props.onClickHandler"
+    :class="`${props.onClickHandler ? 'cursor-pointer' : ''}`"
     class="relative h-[72px] w-[72px] flex items-center shrink-0 justify-center"
   >
     <svg
@@ -53,7 +55,7 @@ const props = defineProps(["src", "done"]);
       :src="props.src"
       :class="`${
         done ? 'w-[80%] h-[80%]' : 'w-[100%] h-[100%]'
-      }bg-red-500 absolute rounded-full`"
+      }bg-red-500 absolute rounded-full ${props.disabled ? 'grayscale-0' : ''}`"
     />
   </div>
 </template>

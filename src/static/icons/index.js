@@ -5,6 +5,8 @@ import menu from "./menu.svg";
 import level1 from "./ic_beginner.png";
 import level2 from "./ic_intermediate.png";
 import level3 from "./ic_advanced.png";
+import google from "./logo-google.svg";
+import logo from "./logo.png";
 
 export default {
   pauseIcon,
@@ -14,4 +16,6 @@ export default {
   level1,
   level2,
   level3,
+  logo,
+  google,
 };

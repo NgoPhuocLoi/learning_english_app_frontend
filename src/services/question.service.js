@@ -10,6 +10,10 @@ class QuestionService {
       params: query,
     });
   }
+
+  async getAllQuestionsOfTest(level) {
+    return await this.api.get("/test/" + level);
+  }
 }
 
 export default QuestionService;

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const BASE_URL = "http://localhost:5000/v1/api";
 
-const getToken = () => localStorage["token"];
+const getToken = () => localStorage["token"] || document.cookie.split("=")[1];
 
 export const createApiClient = (endPoint, needAuth = false) => {
   const axiosClient = axios.create({
@@ -13,11 +13,13 @@ export const createApiClient = (endPoint, needAuth = false) => {
   });
 
   if (needAuth) {
+    const token = getToken();
+    console.log({ token });
     axiosClient.interceptors.request.use(async (config) => {
       return {
         ...config,
         headers: {
-          Authorization: `Bearer ${getToken()}`,
+          Authorization: `Bearer ${token}`,
         },
       };
     });

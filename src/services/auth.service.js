@@ -19,6 +19,10 @@ class AuthService {
       password,
     });
   }
+
+  async loginWithGoogle() {
+    return await this.api.get("/google");
+  }
 }
 
 export default AuthService;

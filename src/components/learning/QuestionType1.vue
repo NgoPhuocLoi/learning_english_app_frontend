@@ -85,7 +85,7 @@ watch(props, () => {
             </div>
             <div
               v-if="props.testing"
-              class="text-2xl font-medium h-full flex items-center justify-center"
+              class="text-2xl text-center font-medium h-full flex items-center justify-center"
             >
               {{ answer?.content }}
             </div>

@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import Sidebar from "./common/Sidebar.vue";
+import icons from "../static/icons";
 
 const show = ref(false);
 </script>
@@ -9,8 +10,8 @@ const show = ref(false);
   <div
     class="fixed bg-white z-10 top-0 w-full lg:h-[80px] md:h-[75px] h-[70px] lg:px-[128px] lg:py-[8px] md:px-[60px] md:py-[7.5px] px-[21px] py-[10.5px] flex justify-between shadow-md"
   >
-    <div class="w-[180px] md:w-[190px] lg:w-[200px] h-full bg-yellow-300">
-      Logo
+    <div class="w-[180px] md:w-[190px] lg:w-[200px]">
+      <img :src="icons.logo" class="w-full" alt="" />
     </div>
 
     <div class="hidden lg:flex items-center justify-center">

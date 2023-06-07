@@ -3,15 +3,18 @@ import { onMounted, ref, shallowRef } from "vue";
 import { useRoute } from "vue-router";
 import PopupNotification from "../components/common/PopupNotification.vue";
 import { QuestionType1, QuestionType2 } from "../components/learning";
-import { QuestionService, TopicService } from "../services";
+import { QuestionService, TopicService, UserService } from "../services";
 import icons from "../static/icons";
-import { useQuestionStore, useTopicStore } from "../store";
+import { useQuestionStore, useTopicStore, useUserStore } from "../store";
+import finishAudio from "../static/finish_lesson_pass.flac";
 
 const topicStore = useTopicStore();
 const questionStore = useQuestionStore();
+const userStore = useUserStore();
 const route = useRoute();
 const topicService = new TopicService();
 const questionService = new QuestionService();
+const userService = new UserService();
 
 const ansStatusStyle = {
   border: {
@@ -38,7 +41,12 @@ onMounted(async () => {
 
   questionStore.setQuestions(res.data.metadata.questions);
 
-  console.log(res.data.metadata.questions);
+  if (userStore.user) {
+    await userService.updateProgress({
+      topicId: topicStore.chosenTopic.id,
+      completed: false,
+    });
+  }
 });
 
 const type = ref(1);
@@ -92,8 +100,10 @@ const onClickNextQuestion = () => {
         </div>
 
         <div class="font-medium text-2xl mt-8 text-center">
-          Chúc mừng! Bạn đã hoàn thành chủ đề này!
+          Chúc mừng! Bạn đã học xong chủ đề này!
         </div>
+
+        <audio :src="finishAudio" autoplay></audio>
       </div>
     </div>
     <div class="px-0 lg:px-8 z-30 mb-4">

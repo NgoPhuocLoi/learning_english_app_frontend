@@ -12,7 +12,7 @@ const routes = [
   {
     path: "/xac-thuc",
     beforeEnter: (to, from, next) => {
-      const token = localStorage["token"];
+      const token = localStorage["token"] || document.cookie.split("=")[1];
       if (token) next("/");
       next();
     },
@@ -32,7 +32,8 @@ const routes = [
     path: "/",
     component: MainPage,
     beforeEnter: async (to, from, next) => {
-      if (!localStorage["token"]) next();
+      const token = localStorage["token"] || document.cookie.split("=")[1];
+      if (!token) next();
       const res = await userService.getCurrentUser();
       userStore.setUser(res.data.metadata.user);
       next();

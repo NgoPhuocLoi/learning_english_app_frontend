@@ -1,14 +1,33 @@
 <script setup>
+import { computed } from "vue";
+import { useRouter } from "vue-router";
 import TopicProgress from "../components/common/TopicProgress.vue";
-import { useUserStore } from "../store";
 import defaultAvatar from "../static/default_avatar.png";
+import { useUserStore, useTopicStore } from "../store";
 
 const userStore = useUserStore();
+const topicStore = useTopicStore();
+const router = useRouter();
+const emit = defineEmits(["update:openModal"]);
 
 const handleLogout = () => {
   localStorage.removeItem("token");
+  document.cookie = "token=";
   userStore.setUser(null);
 };
+
+const onOpenModel = (topic) => {
+  topicStore.setChosenTopic(topic);
+  emit("update:openModal", true);
+};
+
+const completedTopic = computed(
+  () => userStore.user?.topicsDone.filter((t) => t.completed && !t.test).length
+);
+
+const completedTest = computed(
+  () => userStore.user?.topicsDone.filter((t) => t.completed && t.test).length
+);
 </script>
 
 <template>
@@ -23,7 +42,7 @@ const handleLogout = () => {
       <RouterLink to="/xac-thuc/dang-nhap" class="text-blue-500 font-semibold"
         >Đăng nhập</RouterLink
       >
-      để lưu tiến độ học tập
+      để lưu tiến độ học tập và làm nhiều chủ đề hơn.
     </div>
   </div>
 
@@ -53,35 +72,13 @@ const handleLogout = () => {
           class="w-full max-w-full flex flex-nowrap gap-3 my-4 pb-2 overflow-auto custom-scrollbar"
         >
           <TopicProgress
-            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
-            total="50"
-            current="14"
-          />
-          <TopicProgress
-            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
-            total="50"
-            current="14"
-          />
-          <TopicProgress
-            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
-            total="50"
-            current="14"
-          />
-          <TopicProgress
-            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
-            total="50"
-            current="14"
-          />
-
-          <TopicProgress
-            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
-            total="50"
-            current="14"
-          />
-          <TopicProgress
-            src="https://dinoenglish.app/_next/image?url=%2Fassets%2Fmedia%2Fcolor%2Fimage%2Fblue.png&w=1200&q=100"
-            total="50"
-            current="14"
+            v-for="topicDone in userStore.user?.topicsDone.filter(
+              (topic) => !topic.test
+            )"
+            :key="topicDone.id"
+            :src="topicDone.thumbnailUrl"
+            :done="topicDone.completed"
+            :on-click-handler="() => onOpenModel(topicDone)"
           />
         </div>
       </div>
@@ -91,12 +88,16 @@ const handleLogout = () => {
 
         <div class="text-[18px] flex justify-between items-center my-4">
           <h4 class="font-medium">Chủ đề đã hoàn thành</h4>
-          <div class="text-blue-500 font-semibold">0<span>/30</span></div>
+          <div class="text-blue-500 font-semibold">
+            {{ completedTopic }}<span>/30</span>
+          </div>
         </div>
         <div class="h-[1px] bg-gray-200"></div>
         <div class="text-[18px] flex justify-between items-center my-4">
           <h4 class="font-medium">Bài kiểm tra đã hoàn thành</h4>
-          <div class="text-red-500 font-semibold">0<span>/3</span></div>
+          <div class="text-red-500 font-semibold">
+            {{ completedTest }}<span>/3</span>
+          </div>
         </div>
       </div>
 

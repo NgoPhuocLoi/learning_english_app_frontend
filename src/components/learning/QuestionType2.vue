@@ -1,18 +1,7 @@
 <script setup>
 import { computed, ref, watch } from "vue";
-const props = defineProps(["question", "show"]);
-const emit = defineEmits("update:show");
-
-const ansStatusStyle = {
-  border: {
-    true: "border-green-500",
-    false: "border-red-500",
-  },
-  bg: {
-    true: "bg-green-500",
-    false: "bg-red-500",
-  },
-};
+const props = defineProps(["question", "show", "testing", "ansStatusStyle"]);
+const emit = defineEmits("update:showInfo", "update:chosenAns");
 
 const ansChosen = ref([]);
 const quesBody = ref();
@@ -42,14 +31,23 @@ const getWordAfterAns = computed(() => {
 });
 
 const handleChooseAns = (id, isCorrect) => {
-  if (!ansChosen.value.includes(id)) ansChosen.value.push(id);
-  if (isCorrect) {
-    setTimeout(() => {
-      emit("update:show", true);
-      correctAudio.value.play();
-    }, 300);
+  if (props.testing) {
+    ansChosen.value.pop();
+    ansChosen.value.push(id);
+    emit("update:chosenAns", { id, isCorrect });
   } else {
-    incorrectAudio.value.play();
+    if (!ansChosen.value.includes(id)) ansChosen.value.push(id);
+    if (isCorrect) {
+      setTimeout(() => {
+        emit("update:showInfo", {
+          show: true,
+          correct: isCorrect,
+        });
+        correctAudio.value.play();
+      }, 300);
+    } else {
+      incorrectAudio.value.play();
+    }
   }
 };
 
@@ -58,7 +56,7 @@ watch(props, () => {
     quesBody.value.style.opacity = "0";
     setTimeout(() => {
       if (quesBody.value) quesBody.value.style.opacity = "1";
-    }, 500);
+    }, 300);
   }
 });
 </script>
@@ -89,7 +87,7 @@ watch(props, () => {
         @click="handleChooseAns(answer.id, answer.correct)"
         :class="
           ansChosen.includes(answer.id)
-            ? ansStatusStyle.border[answer.correct]
+            ? props.ansStatusStyle.border[answer.correct]
             : 'hover:border-gray-200 border-gray-100'
         "
         class="group h-16 lg:h-20 px-2 flex items-center border-2 cursor-pointer rounded-full shadow hover:shadow-md duration-100 w-full ease-out p-0"
@@ -97,7 +95,7 @@ watch(props, () => {
         <div
           :class="
             ansChosen.includes(answer.id)
-              ? ansStatusStyle.bg[answer.correct] + ' text-white'
+              ? props.ansStatusStyle.bg[answer.correct] + ' text-white'
               : ' group-hover:bg-gray-200'
           "
           class="w-[50px] h-[50px] flex items-center justify-center flex-center rounded-full text-2xl bg-gray-100 duration-100 ease-out"

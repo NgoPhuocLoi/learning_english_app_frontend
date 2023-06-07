@@ -8,6 +8,14 @@ class UserService {
   async getCurrentUser() {
     return await this.api.get("/");
   }
+
+  async updateProgress({ topicId, completed }) {
+    return await this.api.put("/update-progress", { topicId, completed });
+  }
+
+  async updateLevel({ currentLevel }) {
+    return await this.api.put("/update-level", { currentLevel });
+  }
 }
 
 export default UserService;
