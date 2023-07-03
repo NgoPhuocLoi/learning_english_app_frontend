@@ -31,6 +31,7 @@ const getWordAfterAns = computed(() => {
 });
 
 const handleChooseAns = (id, isCorrect) => {
+  console.log(props.ansStatusStyle);
   if (props.testing) {
     ansChosen.value.pop();
     ansChosen.value.push(id);
@@ -95,10 +96,10 @@ watch(props, () => {
         <div
           :class="
             ansChosen.includes(answer.id)
-              ? props.ansStatusStyle.bg[answer.correct] + ' text-white'
-              : ' group-hover:bg-gray-200'
+              ? props.ansStatusStyle.bg[answer.correct] + ' text-white '
+              : ' group-hover:bg-gray-200 '
           "
-          class="w-[50px] h-[50px] flex items-center justify-center flex-center rounded-full text-2xl bg-gray-100 duration-100 ease-out"
+          class="w-[50px] h-[50px] flex items-center justify-center flex-center rounded-full text-2xl duration-100 ease-out"
         >
           {{ String.fromCharCode(65 + index) }}
         </div>

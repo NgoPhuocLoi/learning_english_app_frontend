@@ -6,7 +6,6 @@ import store, { useUserStore } from "../store";
 import { UserService } from "../services";
 
 const userStore = useUserStore(store);
-const userService = new UserService();
 
 const routes = [
   {
@@ -31,12 +30,17 @@ const routes = [
   {
     path: "/",
     component: MainPage,
-    beforeEnter: async (to, from, next) => {
-      const token = localStorage["token"] || document.cookie.split("=")[1];
-      if (!token) next();
-      const res = await userService.getCurrentUser();
-      userStore.setUser(res.data.metadata.user);
-      next();
+    beforeEnter: async (to, from) => {
+      try {
+        const userService = new UserService();
+        const token = localStorage["token"] || document.cookie.split("=")[1];
+        if (token) {
+          const res = await userService.getCurrentUser();
+          userStore.setUser(res.data.metadata.user);
+        }
+      } catch (error) {
+        console.log({ error });
+      }
     },
     children: [
       {

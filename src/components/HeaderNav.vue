@@ -20,10 +20,11 @@ const show = ref(false);
         exact-active-class="text-blue-600 bg-blue-100"
         class="p-2 mx-2 rounded-md hover:bg-blue-100 font-semibold text-gray-700 flex items-center"
       >
-        <ion-icon
-          name="home-outline"
-          class="text-[20px] mr-[2px] mb-[1px]"
-        ></ion-icon>
+        <img
+          :src="icons.homeOutline"
+          class="w-[20px] mr-[2px] mb-[1px]"
+          alt=""
+        />
         Trang chủ
       </RouterLink>
 
@@ -32,20 +33,22 @@ const show = ref(false);
         active-class="text-blue-600 bg-blue-100"
         class="p-2 mx-2 rounded-md hover:bg-blue-100 font-semibold text-gray-700 flex items-center"
       >
-        <ion-icon
-          name="person-outline"
-          class="text-[20px] mr-[2px] mb-[1px]"
-        ></ion-icon>
+        <img
+          :src="icons.personOutline"
+          class="w-[20px] mr-[2px] mb-[1px]"
+          alt=""
+        />
         Hồ sơ</RouterLink
       >
     </div>
 
-    <div class="flex items-center lg:hidden">
-      <ion-icon
-        name="menu"
+    <div class="flex items-center lg:hidden justify-center">
+      <img
+        :src="icons.menu"
         @click="show = true"
-        class="text-[40px] cursor-pointer text-gray-600 hover:text-black"
-      ></ion-icon>
+        class="w-[46px] cursor-pointer hover:bg-gray-200 rounded-full p-[6px] text-gray-600 hover:text-black"
+        alt=""
+      />
     </div>
   </div>
 

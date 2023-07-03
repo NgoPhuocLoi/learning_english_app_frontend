@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watch } from "vue";
+import icons from "../../static/icons";
 
 const props = defineProps(["show"]);
 const emit = defineEmits(["update:show"]);
@@ -28,34 +29,37 @@ watch(props, () => {
         class="px-[22px] py-[14px] flex justify-between shadow-md items-center"
       >
         <span class="font-[500] text-[18px]">Bé học tiếng anh</span>
-        <ion-icon
+        <img
+          :src="icons.closeOutline"
           @click="emit('update:show', false)"
-          name="close"
-          class="text-[26px] p-[2px] rounded-full hover:bg-gray-100 cursor-pointer"
-        ></ion-icon>
+          class="w-[32px] p-[2px] rounded-full hover:bg-gray-100 cursor-pointer"
+          alt=""
+        />
       </div>
 
       <div class="mx-[22px] my-[11px] flex flex-col">
         <RouterLink
           to="/"
           @click="emit('update:show', false)"
-          exact-active-class="text-blue-600 bg-blue-100"
+          exact-active-class=" bg-blue-100"
           class="w-full py-[10px] mb-[4px] pl-[12px] rounded-md hover:bg-blue-100 text-[15px] font-semibold flex items-center"
-          ><ion-icon
-            name="home-outline"
-            class="text-[18px] mr-[4px] mb-[1px]"
-          ></ion-icon>
+          ><img
+            :src="icons.homeOutline"
+            class="w-[20px] mr-[2px] mb-[1px]"
+            alt=""
+          />
           Trang chủ</RouterLink
         >
         <RouterLink
           to="/ho-so"
           @click="emit('update:show', false)"
-          active-class="text-blue-600 bg-blue-100"
+          active-class=" bg-blue-100"
           class="w-full py-[10px] mb-[4px] pl-[12px] rounded-md hover:bg-blue-100 text-[15px] font-semibold flex items-center"
-          ><ion-icon
-            name="person-outline"
-            class="text-[18px] mr-[4px] mb-[1px]"
-          ></ion-icon>
+          ><img
+            :src="icons.personOutline"
+            class="w-[20px] mr-[2px] mb-[1px]"
+            alt=""
+          />
           Hồ sơ</RouterLink
         >
       </div>

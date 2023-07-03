@@ -3,11 +3,10 @@ import { ref, watch } from "vue";
 import { useRouter } from "vue-router";
 import Spinner from "../../components/common/Spinner.vue";
 import { AuthService } from "../../services";
-import { useUserStore } from "../../store";
 import icons from "../../static/icons";
 
 const authService = new AuthService();
-const userStore = useUserStore();
+
 const router = useRouter();
 
 const email = ref("");
@@ -29,7 +28,7 @@ const handleLogin = async () => {
     });
 
     localStorage["token"] = res.data.metadata.tokens.accessToken;
-    userStore.setUser(res.data.metadata.user);
+
     router.push("/");
   } catch (error) {
     errMsg.value =
@@ -41,10 +40,6 @@ const handleLogin = async () => {
     loading.value = false;
   }
 };
-
-const handleLoginWithGoogle = async () => {
-  window.close();
-};
 </script>
 
 <template>
@@ -55,12 +50,7 @@ const handleLoginWithGoogle = async () => {
       >
         Đăng nhập
       </h1>
-      <a
-        @click="handleLoginWithGoogle"
-        href="http://localhost:5000/v1/api/access/google"
-        target="_blank"
-        >Google</a
-      >
+
       <form class="space-y-4 md:space-y-6" @submit.prevent="handleLogin">
         <div>
           <label

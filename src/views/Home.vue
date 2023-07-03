@@ -110,6 +110,16 @@ const completedTest = computed(
           />
 
           <div
+            @click="
+              () =>
+                onOpenTestModel({
+                  title: 'Kiểm tra trung cấp',
+                  desc: 'Luyện tập tất cả những gì đã học ở mức độ Trung cấp',
+                  thumbnail: icons.level2,
+                  open: true,
+                  slug: 'kiem-tra-trung-cap',
+                })
+            "
             :class="`${
               !userStore.user || userStore.user?.current_level < 2
                 ? 'grayscale pointer-events-none'
