@@ -31,7 +31,6 @@ const getWordAfterAns = computed(() => {
 });
 
 const handleChooseAns = (id, isCorrect) => {
-  console.log(props.ansStatusStyle);
   if (props.testing) {
     ansChosen.value.pop();
     ansChosen.value.push(id);

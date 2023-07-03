@@ -14,7 +14,7 @@ export const createApiClient = (endPoint, needAuth = false) => {
 
   if (needAuth) {
     const token = getToken();
-    console.log({ token });
+
     axiosClient.interceptors.request.use(async (config) => {
       return {
         ...config,

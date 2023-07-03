@@ -29,7 +29,6 @@ const ansStatusStyle = {
 
 onMounted(async () => {
   if (!topicStore.chosenTopic) {
-    console.log("Fetch");
     const res = await topicService.getAllTopics();
     const currentTopic = res.data.metadata.topics.find(
       (tp) => tp.slug === route.params.topic
